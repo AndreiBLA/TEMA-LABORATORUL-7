@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descrierea Propriei Persoane - Blaga Andrei-Constantin</title>
+    <style>
+        body {
+            background-color: #f0f0f5;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2a2a8a;
+            font-family: Georgia, serif;
+            text-align: center;
+        }
+
+        .section {
+            background-color: #e6e6ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #8a8aff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4d4db8;
+            color: white;
+        }
+
+        .profile-pic {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        ul.hobby-list {
+            list-style-type: square;
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .hobby-section {
+            border: 2px solid #4d4db8;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        #altaViata {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #birth-year {
+            color: #0056b3;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .email-section {
+            margin-top: 20px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titlu">Descrierea Propriei Persoane</h1>
+
+    <div class="section">
+        <h2>Date de Identificare</h2>
+        <p id="nume"><strong>Nume:</strong> Blaga Andrei-Constantin</p>
+        <p><strong>Anul Nașterii:</strong> <span id="birth-year">2005</span></p>
+    </div>
+
+    <div class="section email-section">
+        <h2>Date de Contact</h2>
+        <p><strong>E-mail:</strong> <input type="email" id="email" placeholder="Introduceți adresa de email"></p>
+        <p class="error-message" id="email-error">Email invalid. Asigurați-vă că include "@"</p>
+        <p><strong>Număr de Telefon:</strong> 0759086921</p>
+    </div>
+
+    <div class="section">
+        <h2>Imagine de Profil</h2>
+        <img src="imagine.jpg" alt="Imagine de profil" class="profile-pic" id="profil">
+    </div>
+
+    <div class="section" id="educatie">
+        <h2>Așteptările și Educația</h2>
+        <p>Ca și așteptările mele după facultate, aș vrea să cunosc cât mai multă lume și să am un job flexibil pentru a-mi clădi o familie stabilă pentru un viitor cât mai strălucitor.</p>
+    </div>
+
+    <div class="section" id="discipline">
+        <h2>Discipline de Aprofundat</h2>
+        <table>
+            <tr>
+                <th>Denumirea Disciplinei</th>
+                <th>Anul de Studii</th>
+            </tr>
+            <tr>
+                <td>Componente și circuite pasive</td>
+                <td>Anul 1</td>
+            </tr>
+            <tr>
+                <td>Informatică aplicată</td>
+                <td>Anul 1</td>
+            </tr>
+            <tr>
+                <td>Programarea calculatoarelor și limbaje de programare</td>
+                <td>Anul 1</td>
+            </tr>
+        </table>
+        <p>Aceste răspunsuri nu sunt finale fiindcă nu am văzut cum sunt celelalte materii din următorii ani, dar aștept cu încântare să le încerc.</p>
+    </div>
+
+    <!-- Secțiunea pentru hobby-uri -->
+    <div class="section hobby-section" id="hobbyuri">
+        <h2>Hobby-uri</h2>
+        <ul class="hobby-list">
+            <li>Vizitarea locurilor noi</li>
+            <li>Vizionarea filmelor</li>
+            <li>Desenul digital</li>
+        </ul>
+    </div>
+
+    <button id="altaViata" onclick="schimbaContinut()">Altă viață</button>
+
+    <script>
+        function schimbaContinut() {
+            document.getElementById("titlu").innerHTML = "O carieră ideală - Blaga Andrei-Constantin";
+            document.getElementById("nume").innerHTML = "<strong>Funcție Visată:</strong> Inginer Software";
+
+            document.getElementById("educatie").innerHTML = `
+                <h2>Experiențe Ideal de Obținut</h2>
+                <p>Participare la stagii de practică naționale, dezvoltare software de top, networking în industrie.</p>`;
+
+            document.getElementById("discipline").innerHTML = `
+                <h2>Realizări Academice și Personale</h2>
+                <p>Voluntariat în proiecte școlare, mențiuni în competiții tech.</p>`;
+
+            document.getElementById("hobbyuri").innerHTML = `
+                <h2>Pasiuni și Noi Provocări</h2>
+                <ul class="hobby-list">
+                    <li>Explorarea împrejurimilor și a altor țări</li>
+                    <li>Participarea la experiențe noi</li>
+                    <li>Pescuitul</li>
+                </ul>`;
+
+            document.getElementById("profil").src = "profil_alternativ.jpg";
+
+            document.body.style.backgroundColor = "#0099cc";
+            document.body.style.color = "#000000";
+
+            let profilImg = document.getElementById("profil");
+            profilImg.style.opacity = "0.8";
+            profilImg.style.border = "4px solid #FFD700";
+            profilImg.style.width = "160px";
+            profilImg.style.height = "160px";
+        }
+
+        const birthYearElement = document.getElementById('birth-year');
+        const birthYear = 2005;
+
+        function calculateAge() {
+            const today = new Date();
+            let age = today.getFullYear() - birthYear;
+
+            const birthMonth = 5;
+            const birthDay = 19;
+            if (
+                today.getMonth() + 1 < birthMonth ||
+                (today.getMonth() + 1 === birthMonth && today.getDate() < birthDay)
+            ) {
+                age--;
+            }
+            return age;
+        }
+
+        birthYearElement.onmouseover = function () {
+            birthYearElement.textContent = `Vârsta: ${calculateAge()} ani`;
+        };
+
+        birthYearElement.onmouseout = function () {
+            birthYearElement.textContent = birthYear;
+        };
+
+        document.getElementById('email').addEventListener('input', function () {
+            const emailField = document.getElementById('email');
+            const errorMessage = document.getElementById('email-error');
+            if (emailField.value.includes('@')) {
+                errorMessage.style.display = 'none';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>
